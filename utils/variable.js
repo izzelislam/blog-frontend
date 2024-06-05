@@ -1,0 +1,1 @@
+export const baseUrl = "https://cms.tvw-group.com/api";
