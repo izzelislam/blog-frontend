@@ -25,6 +25,7 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.11.4",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
+    "nuxt-disqus": "^1.0.1",
     "nuxt-headlessui": "^1.2.0",
     "nuxt-icon": "^0.6.8",
     "nuxt-primevue": "^3.0.0"

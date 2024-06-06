@@ -2,6 +2,6 @@
   provideHeadlessUseId(() => useId());
 </script>
 <template>
-  <NuxtLoadingIndicator duration="5000" />
+  <NuxtLoadingIndicator height="10" throttle="500"/>
   <NuxtPage/>
 </template>

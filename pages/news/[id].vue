@@ -116,13 +116,13 @@
             </div>
             <!-- <div class="text-lg mt-8" v-html="article.content">
             </div> -->
-            <MdPreview language="en-US" :editorId="id" :modelValue="article.content" />
+            <MdPreview style="text-align: justify;" language="en-US" :editorId="id" :modelValue="article.content" />
             <!-- <MdCatalog  :editorId="id" :scrollElement="scrollElement" /> -->
 
             <!-- comment -->
-            <h3 class="text-2xl mt-8 text-gray-700">komentar</h3>
-            <div class="my-4 bg-white p-4 rounded">
-              <div class="flex gap-6">
+            <h3 class="text-2xl mt-8 text-gray-700 mb-4">komentar</h3>
+            <!-- <div class="my-4 bg-white p-4 rounded"> -->
+              <!-- <div class="flex gap-6">
                 <custom-input class="w-full" title="name" v-model="data.name"/>
                 <custom-input class="w-full" title="email" v-model="data.email"/>
               </div>
@@ -133,10 +133,14 @@
               </div>
               <div class="mt-4">
                 <UIButton @click="handleStoreComment" title="post" icon="mdi:send" />
-              </div>
+              </div> -->
+            <!-- </div> -->
+            <div class="bg-white p-4 rounded-lg">
+              <DisqusComments :identifier="article.id" />
             </div>
+            <!-- <DisqusCount :identifier="article.slug" /> -->
 
-            <div class="bg-white p-4 rounded mb-4" v-for="item in article.comments" :key="item.id">
+            <!-- <div class="bg-white p-4 rounded mb-4" v-for="item in article.comments" :key="item.id">
               <div class="divide-y divide-gray-2">
                 <div class="flex justify-between align-middle mb-4">
                   <div>
@@ -151,10 +155,10 @@
                   {{ item.content }}
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
 
-          <div class="sticky top-0  min-w-[300px]">
+          <div class="relative  min-w-[300px]">
             <div class="mb-6">
               <p class="font-semibold text-md text-gray-600 mb-6">Category</p>
               <div class="bg-white rounded-md divide-y divide-gray-300">
@@ -166,7 +170,7 @@
               </div>
             </div>
 
-            <div>
+            <div class="sticky top-10">
               <p class="font-semibold text-md text-gray-600 mb-6">Berita Terbaru</p>
               
               <sidebar-card v-for="item in articles" :key="item.id" :item="item"/>

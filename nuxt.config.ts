@@ -16,8 +16,12 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
     'nuxt-headlessui',
-    "nuxt-tiptap-editor"
+    "nuxt-tiptap-editor",
+    "nuxt-disqus"
   ],
+  disqus: {
+    shortname: "disqus-comments",
+  },
   css : [
     '@/assets/css/main.css'
   ],
