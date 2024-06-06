@@ -152,26 +152,31 @@
 
     <!-- create category -->
     <UIModal :isfull="true" title="Tambah Artikel" :isOpen="isOpen" @closeModal="closeModal" action="Simpan Data">
-      <UISelect title="Pilih Kategori" :items="categories" v-model="data.category_id" :error="errors?.category_id"/>
-      <UIInput title="Judul Artikel" type="text" v-model="data.title" :error="errors?.title"/>
-      
-      <div class="mb-3">
-        <label for="" class="text-sm text-gray-500 ">Gambar</label>
-        <div class="p-2 border border-gray-400 mt-2 rounded-lg" :class="{ 'border-red-500': errors?.image_cover }">
-          <input 
-            class="w-full focus:outline-none" 
-            type="file"
-            @change="handleImage($event)"
-          >
+      <div class="grid grid-cols-3 gap-4">
+        <div>
+          <UISelect title="Pilih Kategori" :items="categories" v-model="data.category_id" :error="errors?.category_id"/>
         </div>
-        <div v-if="false">
-          <p class="text-red-500 text-xs" v-if="false">tes</p>
+        <div>
+          <UIInput title="Judul Artikel" type="text" v-model="data.title" :error="errors?.title"/>
+        </div>
+        <div class="mb-3">
+          <label for="" class="text-sm text-gray-500 ">Gambar</label>
+          <div class="p-2 border border-gray-400 mt-2 rounded-lg" :class="{ 'border-red-500': errors?.image_cover }">
+            <input 
+              class="w-full focus:outline-none" 
+              type="file"
+              @change="handleImage($event)"
+            >
+          </div>
+          <div v-if="false">
+            <p class="text-red-500 text-xs" v-if="false">tes</p>
+          </div>
         </div>
       </div>
 
       <!-- <UITextArea title="Konten" type="text" :row="10" v-model="data.content" :error="errors?.content"/> -->
 
-      <MdEditor v-model="data.content" language="en-US"/>
+      <MdEditor style="height: 70vh;" v-model="data.content" language="en-US"/>
 
       <template #action>
         <button
